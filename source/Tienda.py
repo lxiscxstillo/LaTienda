@@ -1,16 +1,18 @@
+from Producto import Producto
+
 class Tienda:
-    '''------------------------------------------------------------------------------------------------
-    # Atributos
-    -------------------------------------------------------------------------------------------------'''
-    __producto1 = None
-    __producto2 = None
-    __producto3 = None
-    __producto4 = None
-    __dineroEnCaja = 0.0
 
     '''-------------------------------------------------------------------------------------------------
     # Metodos
     -------------------------------------------------------------------------------------------------'''
+    # constructor
+    def __init__(self):
+        self.__producto1 = Producto("PAPELERIA", "lapiz", 500, 30, 9)
+        self.__producto2 = Producto("PAPELERIA", "borrador", 300, 15, 5)
+        self.__producto3 = Producto("SUPERMERCADO", "cafe", 5600, 20, 10)
+        self.__producto4 = Producto("DROGUERIA", "desinfectante", 3200, 12, 11)
+        self.__dineroEnCaja = 0.0
+
 
     def getProducto1(self):
         return self.__producto1

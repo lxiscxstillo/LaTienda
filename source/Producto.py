@@ -71,3 +71,44 @@ class Producto:
 
     def setCantidadUnidadesVendidas(self, CantidadUnidadesVendidas):
         self.__cantidadUnidadesVendidas = CantidadUnidadesVendidas
+
+    def vender(self, cantidad):
+        if cantidad <= self.__cantidadBodega:
+            self.__cantidadUnidadesVendidas += cantidad
+            self.__cantidadBodega -= cantidad
+        else:
+            print("Cantidad no disponible")
+
+    def haySuficiente(self, cantidad):
+        if cantidad <= self.__cantidadBodega:
+            return True
+        else:
+            return False
+        
+    def getIVA(self):
+        if self.__tipo == "PAPELERIA":
+            return self.__IVA_PAPELERIA
+        elif self.__tipo == "FARMACIA":
+            return self.__IVA_FARMACIA
+        elif self.__tipo == "SUPERMERCADO":
+            return self.__IVA_SUPERMERCADO
+        else:
+            print("Categoria no soportada")
+    
+    def subirValorUnitario(self):
+        if self.__valorUnitario < 1000:
+            self.__valorUnitario += self.__valorUnitario * 0.01
+        elif self.__valorUnitario == [1000, 5000]:
+            self.__valorUnitario += self.__valorUnitario * 0.02
+        elif self.__valorUnitario > 5000:
+            self.__valorUnitario += self.__valorUnitario * 0.03
+
+    def hacerPedido(self, pCantidad):
+        if self.__cantidadBodega <= self.__cantidadMinima:
+            self.__cantidadBodega += pCantidad
+
+    def cambiarValorUnitario(self):
+        if self.__tipo == "FARMACIA" or self.__tipo == "PAPELERIA":
+            self.__valorUnitario -=self.__valorunitario *0.10
+        elif self.__tipo == "SUPERMERCADO":
+            self.__valorUnitario += self.__valorUnitario * 0.05
