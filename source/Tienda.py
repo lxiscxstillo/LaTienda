@@ -28,3 +28,20 @@ class Tienda:
     
     def getDineroEnCaja(self):
         return self.__dineroEnCaja
+    
+    def venderProducto(self, pNombreProducto, pCantidad):
+        if pNombreProducto == self.__producto1.getNombre():
+            unidadesVendidas = self.__producto1.vender(pCantidad)
+            return unidadesVendidas
+        elif pNombreProducto == self.__producto2.getNombre():
+            unidadesVendidas = self.__producto2.vender(pCantidad)
+            return unidadesVendidas
+        elif pNombreProducto == self.__producto3.getNombre():
+            unidadesVendidas = self.__producto3.vender(pCantidad)
+            return unidadesVendidas
+        elif pNombreProducto == self.__producto4.getNombre():
+            unidadesVendidas = self.__producto4.vender(pCantidad)
+            return unidadesVendidas
+        
+    def cuantosPapeleria(self):
+        return self.__producto1.getCantidadUnidadesVendidas() + self.__producto2.getCantidadUnidadesVendidas() 
