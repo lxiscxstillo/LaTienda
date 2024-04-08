@@ -44,4 +44,24 @@ class Tienda:
             return unidadesVendidas
         
     def cuantosPapeleria(self):
-        return self.__producto1.getCantidadUnidadesVendidas() + self.__producto2.getCantidadUnidadesVendidas() 
+        return self.__producto1.getCantidadUnidadesVendidas() + self.__producto2.getCantidadUnidadesVendidas()
+    
+    def darPrecioProducto(self, pNumeroProducto):
+        if pNumeroProducto == 1:
+            return self.__producto1.getValorUnitario()
+        elif pNumeroProducto == 2:
+            return self.__producto2.getValorUnitario()
+        elif pNumeroProducto == 3:
+            return self.__producto3.getValorUnitario()
+        elif pNumeroProducto == 4:
+            return self.__producto4.getValorUnitario()
+        
+    def darPrecioProducto2Forma(self, pNombreProducto):
+        if pNombreProducto == "lapiz":
+            return self.__producto1.getValorUnitario()
+        elif pNombreProducto == "borrador":
+            return self.__producto2.getValorUnitario()
+        elif pNombreProducto == "cafe":
+            return self.__producto3.getValorUnitario()
+        elif pNombreProducto == "desinfectante":
+            return self.__producto4.getValorUnitario()

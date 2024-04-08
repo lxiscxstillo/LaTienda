@@ -112,3 +112,20 @@ class Producto:
             self.__valorUnitario -=self.__valorunitario *0.10
         elif self.__tipo == "SUPERMERCADO":
             self.__valorUnitario += self.__valorUnitario * 0.05
+
+    def nombreTipoProducto(self):
+        tipo = self.getTipo()
+        if tipo == "SUPERMERCADO":
+            return "El producto es de supermercado"
+        elif tipo == "FARMACIA":
+            return "El producto es de farmacia"
+        elif tipo == "PAPELERIA":
+            return "El producto es de papeleria"
+        
+    def aumentarValorUnitario(self):
+        if self.__tipo == "FARMACIA":
+            self.__valorUnitario += self.__valorUnitario * 0.01
+        elif self.__tipo == "SUPERMERCADO":
+            self.__valorUnitario += self.__valorUnitario * 0.03
+        elif self.__tipo == "PAPELERIA":
+            self.__valorUnitario += self.__valorUnitario * 0.02
